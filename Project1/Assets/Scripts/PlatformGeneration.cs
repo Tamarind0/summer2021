@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,42 +7,50 @@ public class PlatformGeneration : MonoBehaviour
 {
 
     [SerializeField]
-    float RandomX, RandomY;
+    float RandomX;
 
     [SerializeField]
-    UnityEngine.GameObject Platform;
+   private GameObject Platform;
 
-    UnityEngine.GameObject Player;
+   [SerializeField]
+   private Transform TopPoint;
+    [SerializeField]
+    private float distanceBetweenY;
 
-    private int ourX = 0, ourY = 0;
-
-    void Start()
-    {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        StartingPlatform();
-    }
-
-    private void StartingPlatform()
-    {
-        
-        
-
-
-        
-            //float randomX = UnityEngine.Random.Range(-RandomX, RandomX);
-            //float randomY = UnityEngine.Random.Range(-RandomY, RandomY);
-            Instantiate(Platform, new Vector3(ourX++, ourY++, 0), Quaternion.identity);
-            
-        
-    }
-
+    public LayerMask mask;
     // Update is called once per frame
     void Update()
-    {
-        if(Player.transform.position.y % 2 == 0)
-        {
-            StartingPlatform();
-        }
+    {   
+        if(transform.position.y < TopPoint.position.y){
+            for(int i = 0; i < 4; i++){
+                float randomX = Random.Range(-RandomX, RandomX);
+                if(i < 3){
+             transform.position = new Vector3 (randomX, transform.position.y, transform.position.z);
+            GameObject Pain =  Instantiate(Platform, transform.position, transform.rotation);
+            Debug.Log(mask.ToString());
+             if(Pain.GetComponent<EdgeCollider2D>().IsTouchingLayers(mask) == true)
+             {
+                 Debug.Log("DESTROYED");
+                 Destroy(Pain);
+             } 
+                }
 
+
+
+             transform.position = new Vector3 (randomX, transform.position.y + distanceBetweenY, transform.position.z);
+            GameObject Pain2 = Instantiate(Platform, transform.position, transform.rotation);
+             if(Pain2.GetComponent<EdgeCollider2D>().IsTouchingLayers(mask) == true)
+             {
+                 Debug.Log("L");
+                 Destroy(Pain2);
+             } 
+            }
+           // transform.position = new Vector3 (randomX , transform.position.y + distanceBetween, transform.position.z);
+         //  Instantiate(Platform, transform.position, transform.rotation);
+         //   float randomX2 = randomX;
+         //  randomX2 = Random.Range(-RandomX, RandomX);
+         //   transform.position = new Vector3 (randomX2, transform.position.y + distanceBetween, transform.position.z);
+         //   Instantiate(Platform, transform.position, transform.rotation);
+        }
     }
 }
