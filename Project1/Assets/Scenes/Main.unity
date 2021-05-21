@@ -894,7 +894,9 @@ MonoBehaviour:
   Platform: {fileID: 1441249996525089512, guid: 8e98a0c5e53fd16489381e4001a863e0, type: 3}
   TopPoint: {fileID: 2416004}
   distanceBetweenY: 3
-  distanceBetweenX: 3
+  mask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &1698344713
 Transform:
   m_ObjectHideFlags: 0
