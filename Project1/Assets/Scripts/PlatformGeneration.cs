@@ -39,35 +39,21 @@ public class PlatformGeneration : MonoBehaviour
     {   
 
         if(transform.position.y < TopPoint.position.y){
-           for(int i = 0; i < 10; i++){ // creating 4 platforms
-       //         spawn.y += Random.Range(minY, maxY);
-              //  float randomX = Random.Range(-RandomX, RandomX);
-             float xPosition = Random.Range(-randomX, randomX);
-             transform.position = new Vector3 (transform.position.x + xPosition, transform.position.y + platformHeight + distanceBetweenY, transform.position.z);
+           for(int i = 0; i < 10; i++){ // creating 10 platforms
+            float xPosition = Random.Range(-randomX, randomX);
+            transform.position = new Vector3 (transform.position.x + xPosition, transform.position.y + platformHeight + distanceBetweenY, transform.position.z);
             GameObject newPlatform =  Instantiate(Platform, transform.position, transform.rotation);
-           // if(newPlatform.transform.position.x >= -7){
-          //    Destroy(newPlatform);
-          //  }
+           if(newPlatform.transform.position.x <= -6.0){// rearraging the platforms if they spawn too far from the center
+             newPlatform.transform.position = new Vector3 (transform.position.x + 7.0f, transform.position.y, transform.position.z); //moving the newplatform to the new location
+             transform.position = new Vector3 (transform.position.x + 7.0f, transform.position.y, transform.position.z);// moving the spawner to the new location
            }
-         }
-
-
-/// I forgot why we did this
-           //  transform.position = new Vector3 (randomX, transform.position.y + distanceBetweenY, transform.position.z);
-           // GameObject Pain2 = Instantiate(Platform, transform.position, transform.rotation);
-           //  if(Pain2.GetComponent<EdgeCollider2D>().IsTouchingLayers(mask) == true)
-           //  {
-           //      Debug.Log("L");
-           //      Destroy(Pain2);
-           //  } 
-            }
-
-           // transform.position = new Vector3 (randomX , transform.position.y + distanceBetween, transform.position.z);
-         //  Instantiate(Platform, transform.position, transform.rotation);
-         //   float randomX2 = randomX;
-         //  randomX2 = Random.Range(-RandomX, RandomX);
-         //   transform.position = new Vector3 (randomX2, transform.position.y + distanceBetween, transform.position.z);
-         //   Instantiate(Platform, transform.position, transform.rotation);
+           else if(newPlatform.transform.position.x >= 6.0){ // rearraging the platforms if they spawn too far from the center
+             newPlatform.transform.position = new Vector3 (transform.position.x - 7.0f, transform.position.y, transform.position.z);//moving the newplatform to the new location
+             transform.position = new Vector3 (transform.position.x - 7.0f, transform.position.y, transform.position.z);// moving the spawner to the new location
+           }
+           }
+         } 
+        }
         
     
 }
