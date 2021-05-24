@@ -294,6 +294,7 @@ Transform:
   - {fileID: 632162918}
   - {fileID: 1552043306}
   - {fileID: 2416004}
+  - {fileID: 1343599205}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -864,6 +865,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193090433}
   m_CullTransparentMesh: 1
+--- !u!1 &1343599204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343599205}
+  - component: {fileID: 1343599206}
+  m_Layer: 0
+  m_Name: BottomPointer
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1343599205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343599204}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 253579027}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1343599206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343599204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78a1bd138d1a7e4697db2b6e36bf06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1709906131}
 --- !u!4 &1462538994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1441249996525089518, guid: 8e98a0c5e53fd16489381e4001a863e0, type: 3}
@@ -980,10 +1025,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2469013ddda1543af8d97dcb109b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomX: 3
   Platform: {fileID: 1441249996525089512, guid: 8e98a0c5e53fd16489381e4001a863e0, type: 3}
   TopPoint: {fileID: 2416004}
   distanceBetweenY: 0.5
+  randomX: 5
 --- !u!4 &1698344713
 Transform:
   m_ObjectHideFlags: 0

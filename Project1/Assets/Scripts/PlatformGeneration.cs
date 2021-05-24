@@ -5,39 +5,25 @@ using UnityEngine;
 
 public class PlatformGeneration : MonoBehaviour
 {
+    [SerializeField]private GameObject Platform; // platform prefab
 
-    
-    public float randomX = 1f;
+    [SerializeField]private Transform TopPoint; // the gameobject that is above the camera that will initailize the spawning of the platforms
+
+    [SerializeField] private float distanceBetweenY; // separation between the platforms 
+    [SerializeField] public float randomX ; // separation between the platforms in the x direction
   
+    private float platformHeight; // box colliders height
 
-    [SerializeField]private GameObject Platform;
-
-   [SerializeField]private Transform TopPoint;
-
-    [SerializeField] private float distanceBetweenY;
-  
-    private float platformHeight;
-
-   // public float minY = .2f;
-   // public float maxY = 1.5f;
-   // public float levelWidth = 3f;
 
 //brackeys spawner no bueno
   void Start(){
-    platformHeight = Platform.GetComponent<BoxCollider2D>().size.y;
-    
-   // Vector3 spawn  = new Vector3();
-   //     for(int i = 0; i < 4; i++){ 
-   //             spawn.y += Random.Range(minY, maxY);
-   //            spawn.x = Random.Range(-levelWidth, levelWidth);
-   //      Instantiate(Platform, spawn, Quaternion.identity);
-   //         }
+    platformHeight = Platform.GetComponent<BoxCollider2D>().size.y; // we need a box collider to get how tall the platform is so they don't overlap.
  
   }
     // Update is called once per frame
     void Update()
     {   
-
+    
         if(transform.position.y < TopPoint.position.y){
            for(int i = 0; i < 10; i++){ // creating 10 platforms
             float xPosition = Random.Range(-randomX, randomX);
