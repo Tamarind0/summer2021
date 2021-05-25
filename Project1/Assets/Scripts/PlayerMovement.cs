@@ -15,6 +15,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
      float horizontalInput = Input.GetAxis("Horizontal");
-     _player.velocity = new Vector2(horizontalInput * movementSpeed, _player.velocity.y);
+     _player.velocity = new Vector2(horizontalInput * movementSpeed, _player.velocity.y); // constant velocity upwards, instread of a multiple with force
     }
 }
