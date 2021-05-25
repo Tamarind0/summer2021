@@ -11,10 +11,10 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-    //public void ChangeOutfitLoad()
-   // {
-
-    //}
+    public void ChangeOutfitLoad()
+    {
+        SceneManager.LoadScene("Change Outfit");
+    }
 
     public void Exit()
     {
@@ -24,5 +24,6 @@ public class ButtonManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Main");
+        Cursor.lockState = CursorLockMode.Locked; // diables the cursor
     }
 }

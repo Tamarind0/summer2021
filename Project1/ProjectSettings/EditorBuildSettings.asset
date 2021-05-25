@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 5503edd9b86c4024bb00cd0a4d682b77
+  - enabled: 1
+    path: Assets/Scenes/Change Outfit.unity
+    guid: 0d7f4c7805e8ae0428db13b68d9727ad
   m_configObjects: {}

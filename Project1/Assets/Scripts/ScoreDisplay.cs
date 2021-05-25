@@ -2,66 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 public class ScoreDisplay : MonoBehaviour
 {
+    //used to display to the score on the Main scene
+    [SerializeField] private TextMeshProUGUI textBox;
+    [SerializeField] private GameObject player;
+    private ScoreCounter _score;
 
-    public int heightScore;
-    public TextMeshProUGUI textBox;
-    private GameObject player;
+    void Start(){
+        if(GameObject.Find("ScoreCounter") != null){
+            _score = GameObject.Find("ScoreCounter").GetComponent<ScoreCounter>();
+            _score.heightScore = 0;
+        }
+    }
 
-    private static ScoreDisplay _score;
-
-    public static ScoreDisplay score
+    void Update()
     {
-        get
+        if (_score.heightScore <= player.transform.position.y)      //if player falls below highest score we so not update the display score
         {
-            if( _score == null)
-            {
-                _score = FindObjectOfType<ScoreDisplay>();
-            }
-            return _score;
+            _score.heightScore = (int)player.transform.position.y;
         }
+        textBox.text = _score.heightScore.ToString(); 
     }
-
-  
-
-    private void Awake()
-    {
-       // textBox = GameObject.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-        if(_score != null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            _score = this;
-            DontDestroyOnLoad(this);
-        }
-        if(SceneManager.GetActiveScene().name == "Main"){
-        player = GameObject.FindGameObjectWithTag("Player");
-        }
-
-
-    }
-
-    private void Update()
-    {
-        textBox = GameObject.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-
-        if (SceneManager.GetActiveScene().name == "Main"){
-        if (heightScore <= player.transform.position.y)      //if player falls below highest score we so not update the display score
-        {
-            heightScore = (int)player.transform.position.y;
-            
-        }
-
-    }
-        textBox.text = heightScore.ToString();
-       
-
-    }
-
-
 }
