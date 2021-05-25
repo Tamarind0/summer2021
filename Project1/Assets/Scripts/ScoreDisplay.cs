@@ -25,8 +25,11 @@ public class ScoreDisplay : MonoBehaviour
         }
     }
 
+  
+
     private void Awake()
     {
+       // textBox = GameObject.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
         if(_score != null)
         {
             Destroy(this);
@@ -45,13 +48,19 @@ public class ScoreDisplay : MonoBehaviour
 
     private void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Main"){
+        textBox = GameObject.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+
+        if (SceneManager.GetActiveScene().name == "Main"){
         if (heightScore <= player.transform.position.y)      //if player falls below highest score we so not update the display score
         {
             heightScore = (int)player.transform.position.y;
-            textBox.text = heightScore.ToString();
+            
         }
+
     }
+        textBox.text = heightScore.ToString();
+       
+
     }
 
 
