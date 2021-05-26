@@ -28,13 +28,14 @@ public class PlatformGeneration : MonoBehaviour
         if(transform.position.y < TopPoint.position.y){
            for(int i = 0; i < numofPlatforms; i++){ // creating 10 platforms
             float xPosition = Random.Range(-randomX, randomX);
+            //
             transform.position = new Vector3 (transform.position.x + xPosition, transform.position.y + platformHeight + distanceBetweenY, transform.position.z);
             newPlatform =  Instantiate(Platform, transform.position, transform.rotation);
             // multiple platforms on the same x
-          //  float test  = -(transform.position.x + xPosition);
-           // transform.position = new Vector3(test, transform.position.y, transform.position.z);
+            //  float test  = -(transform.position.x + xPosition);
+            // transform.position = new Vector3(test, transform.position.y, transform.position.z);
             //newPlatform = Instantiate(Platform, transform.position, transform.rotation);
-            
+          
            if(newPlatform.transform.position.x <= -6.0){// rearraging the platforms if they spawn too far from the center
              newPlatform.transform.position = new Vector3 (transform.position.x + 7.0f, transform.position.y, transform.position.z); //moving the newplatform to the new location
              transform.position = new Vector3 (transform.position.x + 7.0f, transform.position.y, transform.position.z);// moving the spawner to the new location
