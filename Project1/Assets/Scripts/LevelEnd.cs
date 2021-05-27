@@ -4,32 +4,35 @@ using UnityEngine;
 using TMPro;
 public class LevelEnd : MonoBehaviour
 {
-    private string playerName;
     [SerializeField] private TextMeshProUGUI textBox;
 
     [SerializeField] private TMP_InputField inputField;
+
     private ScoreCounter _score;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.None;
+
+    [SerializeField] private Rigidbody2D rb;
+
+    private TextMeshProUGUI otherCanvas;
+
+    public void Start(){
         if(GameObject.Find("ScoreCounter") != null){
             _score = GameObject.Find("ScoreCounter").GetComponent<ScoreCounter>();
-            }
-            fillTextBox();
-            inputField.characterLimit = 4;
-            
+        }
     }
-   public void fillTextBox(){
 
+    // Start is called before the first frame update
+   public void Spawn(){
+      gameObject.SetActive(true); // appearing the canvas
+       Cursor.lockState = CursorLockMode.None;
+       rb.constraints = RigidbodyConstraints2D.FreezeAll;
        textBox.text = _score.heightScore.ToString();
-    }
+       inputField.characterLimit = 4;
+  
+   }
 
     public void PlayerNameInput(){
-        playerName = inputField.text;
-        _score.playerName = this.playerName;
+        _score.playerName = inputField.text;
         inputField.readOnly = true;
         
     }
-
 }
