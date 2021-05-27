@@ -12,6 +12,14 @@ public class PlatformController : MonoBehaviour
                                             // bc the when it's less than 0 that means the velocity is neg since
                                             // it is falling
         if(collision.rigidbody != null){    //!= null means when the rigidbody hits the platform, so when it doesn't hit the plaform nothing happens
+            if(this.tag == "SuperJump")
+                {
+                    FindObjectOfType<AudioManager>().Play("SuperJump");
+                }
+                if (this.tag == "NormalPlatform")
+                {
+                    FindObjectOfType<AudioManager>().Play("Jump");
+                }
             collision.rigidbody.velocity = transform.up * jumpForce;
         }
      }

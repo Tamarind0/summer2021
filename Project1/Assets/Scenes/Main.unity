@@ -2329,6 +2329,7 @@ MonoBehaviour:
   distanceBetweenY: 0.5
   randomX: 5
   numofPlatforms: 1
+  specialPlatform: {fileID: 1441249996525089512, guid: 44c035d596f8867428e5292770620669, type: 3}
 --- !u!4 &1698344713
 Transform:
   m_ObjectHideFlags: 0
