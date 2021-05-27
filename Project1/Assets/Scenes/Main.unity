@@ -939,13 +939,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: death
+  - name: SuperJump
     clip: {fileID: 8300000, guid: dbd4a68945ee16b4f8399f6909340c84, type: 3}
     volume: 1
     pitch: 1.63
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 698bd5c7fc09f844e9603d261ca9ba6f, type: 3}
+    volume: 1
+    pitch: 1.63
+    source: {fileID: 0}
+  - name: Death
+    clip: {fileID: 8300000, guid: ad475cac96cff254b93564dbf587b4bc, type: 3}
     volume: 1
     pitch: 1.63
     source: {fileID: 0}
