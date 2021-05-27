@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7578961096077058922}
   m_Layer: 3
   m_Name: PlatformWithCollider
-  m_TagString: NormalPlatform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,4 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eb9e0f8a44aac0469b89f55e26fc962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BottomPointer: {fileID: 0}
+  BottomPoint: {fileID: 0}
