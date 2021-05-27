@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2129293476772744622}
   m_Layer: 0
   m_Name: Platform Pixel
-  m_TagString: Untagged
+  m_TagString: SuperJump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
