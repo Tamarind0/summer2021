@@ -18,7 +18,6 @@ public class PlayerDied : MonoBehaviour
             transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y - lowerBoundValue, _player.transform.position.z);
         }
         if(_player.transform.position.y < transform.position.y){
-           
             SceneManager.LoadScene("GameOver");
         }
         
