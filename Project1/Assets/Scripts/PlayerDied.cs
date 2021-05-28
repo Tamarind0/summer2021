@@ -12,6 +12,7 @@ public class PlayerDied : MonoBehaviour
     public LevelEnd LevelEnd; // calling on the LevelEnd script
     public TextMeshProUGUI otherCanvas;
 
+    private bool myBool = true;
  
 
     // Update is called once per frame
@@ -22,7 +23,13 @@ public class PlayerDied : MonoBehaviour
             transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y - lowerBoundValue, _player.transform.position.z);
         }
         if(_player.transform.position.y < transform.position.y){
-            //FindObjectOfType<AudioManager>().Play("Death");
+            if (myBool)
+            {
+              
+                 FindObjectOfType<AudioManager>().Play("Death");
+                myBool = false;
+            }
+
             Vanish();
             LevelEnd.Start();
             LevelEnd.Spawn();
