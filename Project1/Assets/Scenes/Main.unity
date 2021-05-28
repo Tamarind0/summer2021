@@ -2680,7 +2680,7 @@ MonoBehaviour:
     pitch: 1.92
     source: {fileID: 0}
   - name: ClickAudio
-    clip: {fileID: 8300000, guid: ad475cac96cff254b93564dbf587b4bc, type: 3}
+    clip: {fileID: 8300000, guid: 25310151a6511294fb942f13c75b52fb, type: 3}
     volume: 1
     pitch: 1.92
     source: {fileID: 0}
