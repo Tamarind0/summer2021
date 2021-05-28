@@ -26,4 +26,8 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Main");
         Cursor.lockState = CursorLockMode.Locked; // diables the cursor
     }
+
+    public void ButtonAudio(){
+        FindObjectOfType<AudioManager>().Play("ClickAudio");
+    }
 }
