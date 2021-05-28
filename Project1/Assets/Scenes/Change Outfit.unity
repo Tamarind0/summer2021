@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 100829405}
   - component: {fileID: 100829404}
   - component: {fileID: 100829407}
+  - component: {fileID: 100829408}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -235,7 +236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -272, y: -100}
+  m_AnchoredPosition: {x: -272, y: -120}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100829404
@@ -285,6 +286,18 @@ MonoBehaviour:
       - m_Target: {fileID: 100829407}
         m_TargetAssemblyTypeName: SelectSkin, Assembly-CSharp
         m_MethodName: SelectBlueSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 100829408}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -347,6 +360,18 @@ MonoBehaviour:
   redSkin: {fileID: 21300000, guid: daf8dac38ad01cc4aa446c7631b02c0e, type: 3}
   blueSkin: {fileID: 21300000, guid: 6535db0d553f3ab41ac7a026dbea6ece, type: 3}
   greenSkin: {fileID: 21300000, guid: 527617756d9ab1643a5030dd882f33d9, type: 3}
+--- !u!114 &100829408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100829402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5197d2513955ef04d99836c4f5890efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &267707953
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +787,7 @@ GameObject:
   - component: {fileID: 467922087}
   - component: {fileID: 467922086}
   - component: {fileID: 467922089}
+  - component: {fileID: 467922090}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -786,7 +812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 249, y: -100}
+  m_AnchoredPosition: {x: 249, y: -120}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &467922086
@@ -836,6 +862,18 @@ MonoBehaviour:
       - m_Target: {fileID: 467922089}
         m_TargetAssemblyTypeName: SelectSkin, Assembly-CSharp
         m_MethodName: SelectGreenSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 467922090}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -898,6 +936,18 @@ MonoBehaviour:
   redSkin: {fileID: 21300000, guid: daf8dac38ad01cc4aa446c7631b02c0e, type: 3}
   blueSkin: {fileID: 21300000, guid: 6535db0d553f3ab41ac7a026dbea6ece, type: 3}
   greenSkin: {fileID: 21300000, guid: 527617756d9ab1643a5030dd882f33d9, type: 3}
+--- !u!114 &467922090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467922084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5197d2513955ef04d99836c4f5890efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &553420700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +1715,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1880978789}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1880978791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,6 +1778,7 @@ GameObject:
   - component: {fileID: 2062843496}
   - component: {fileID: 2062843495}
   - component: {fileID: 2062843498}
+  - component: {fileID: 2062843499}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1740,7 +1803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -100}
+  m_AnchoredPosition: {x: -5, y: -120}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2062843495
@@ -1790,6 +1853,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2062843498}
         m_TargetAssemblyTypeName: SelectSkin, Assembly-CSharp
         m_MethodName: SelectRedSkin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2062843499}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: ButtonAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1852,3 +1927,15 @@ MonoBehaviour:
   redSkin: {fileID: 21300000, guid: daf8dac38ad01cc4aa446c7631b02c0e, type: 3}
   blueSkin: {fileID: 21300000, guid: 6535db0d553f3ab41ac7a026dbea6ece, type: 3}
   greenSkin: {fileID: 21300000, guid: 527617756d9ab1643a5030dd882f33d9, type: 3}
+--- !u!114 &2062843499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062843493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5197d2513955ef04d99836c4f5890efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
