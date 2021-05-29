@@ -1541,7 +1541,7 @@ MonoBehaviour:
   - name: ClickAudio
     clip: {fileID: 8300000, guid: 25310151a6511294fb942f13c75b52fb, type: 3}
     volume: 1
-    pitch: 1.2
+    pitch: 0.63
     source: {fileID: 0}
 --- !u!4 &2005496571
 Transform:
