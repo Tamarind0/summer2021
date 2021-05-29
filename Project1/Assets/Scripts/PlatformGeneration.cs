@@ -10,9 +10,9 @@ public class PlatformGeneration : MonoBehaviour
     [SerializeField]private Transform TopPoint; // the gameobject that is above the camera that will initailize the spawning of the platforms
 
     [SerializeField] private float distanceBetweenY; // separation between the platforms 
-    [SerializeField] public float randomX ; // separation between the platforms in the x direction
+    [SerializeField] public float randomX, platformVariation; // separation between the platforms in the x direction
     [SerializeField] private float numofPlatforms;
-    [SerializeField] GameObject specialPlatform;
+    [SerializeField] GameObject specialPlatform;  //pink platforms that launch higher
     private float platformHeight; // box colliders height
    // private float platformWitdh;
     private GameObject newPlatform;
@@ -27,6 +27,10 @@ public class PlatformGeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
+        if(player.transform.position.y > 300)
+        {
+            distanceBetweenY = 1.2f;
+        }
     
         if(transform.position.y < TopPoint.position.y){
            for(int i = 0; i < numofPlatforms; i++){ // creating 10 platforms
@@ -44,13 +48,13 @@ public class PlatformGeneration : MonoBehaviour
                     transform.position = new Vector3(transform.position.x + xPosition, transform.position.y + platformHeight + distanceBetweenY, transform.position.z);
                     newPlatform = Instantiate(specialPlatform, transform.position, transform.rotation);
                 }
-          
-           if(newPlatform.transform.position.x <= -6.0){// rearraging the platforms if they spawn too far from the center
+                float randTemp = Random.Range(0, platformVariation);
+                if (newPlatform.transform.position.x <= -7.0){// rearraging the platforms if they spawn too far from the center
              newPlatform.transform.position = new Vector3 (transform.position.x + 7.0f, transform.position.y, transform.position.z); //moving the newplatform to the new location
-             transform.position = new Vector3 (transform.position.x + 7.0f, transform.position.y, transform.position.z);// moving the spawner to the new location
+             transform.position = new Vector3 (transform.position.x + randTemp, transform.position.y, transform.position.z);// moving the spawner to the new location
            }
-           else if(newPlatform.transform.position.x >= 6.0){ // rearraging the platforms if they spawn too far from the center
-             newPlatform.transform.position = new Vector3 (transform.position.x - 7.0f, transform.position.y, transform.position.z);//moving the newplatform to the new location
+           else if(newPlatform.transform.position.x >= 7.0){ // rearraging the platforms if they spawn too far from the center
+             newPlatform.transform.position = new Vector3 (transform.position.x - randTemp, transform.position.y, transform.position.z);//moving the newplatform to the new location
              transform.position = new Vector3 (transform.position.x - 7.0f, transform.position.y, transform.position.z);// moving the spawner to the new location
            }
            }
