@@ -35,4 +35,8 @@ public class LevelEnd : MonoBehaviour
         inputField.readOnly = true;
         
     }
+
+    public void SavePlayerInfo(){
+        _score.LeaderBoardInfo.Add(_score.playerName, _score.heightScore);
+    }
 }
