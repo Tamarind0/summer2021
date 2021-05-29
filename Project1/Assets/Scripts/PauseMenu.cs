@@ -6,32 +6,31 @@ using UnityEngine.UI;
 // Pause UI in the "Main" scene
 public class PauseMenu : MonoBehaviour
 {
-    private Vector2 playerVelocity;
-    [SerializeField] private Rigidbody2D rb;
+    public static bool gamePaused = false;
     [SerializeField] private GameObject PauseCanvas;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
-            playerVelocity = rb.velocity;
-            Pause();
-        }
-        
+            if(gamePaused){ // allowing the player to press ESC again to resume the game
+                Resume();
+            }else{
+                Pause();
+            } 
+        }  
     }
 
     private void Pause(){
         PauseCanvas.gameObject.SetActive(true); // "spawning" the canvas
         Cursor.lockState = CursorLockMode.None;
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        Time.timeScale = 0f;
+
         
     }
-
     public void Resume(){
         PauseCanvas.gameObject.SetActive(false);
          Cursor.lockState = CursorLockMode.Locked;
-         rb.constraints = RigidbodyConstraints2D.None;
-         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-         rb.velocity = playerVelocity;
+        Time.timeScale = 1f;
     }
 }
