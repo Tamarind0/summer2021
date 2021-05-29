@@ -17,12 +17,20 @@ public class LeaderBoard : MonoBehaviour
     {       
         if(GameObject.Find("ScoreCounter") != null){
             _score = GameObject.Find("ScoreCounter").GetComponent<ScoreCounter>();
-         }  
+         }     
+            if(_score.LeaderBoardInfo.Count() < 10){
+                int difference = 10 - _score.LeaderBoardInfo.Count();
+                for(int i = 0; i < difference; i++){
+                    _score.LeaderBoardInfo.Add("KEKW"+i, i);                    
+                }
 
-        foreach (var item in _score.LeaderBoardInfo.OrderByDescending(r => r.Value).Take(5))
-        {
-            playerTXT.text = item.Key + " " + item.Value.ToString() + "\n";
-        }
+            }
+    var item = _score.LeaderBoardInfo.OrderByDescending(pair => pair.Value).Take(10).ToDictionary(pair => pair.Key, pair => pair.Value);
+    foreach (KeyValuePair<string, int> kvp in item)
+    {
+        playerTXT.text += string.Format("{0}                         {1} \n", kvp.Key, kvp.Value);
+    }
+        
 
     }
 

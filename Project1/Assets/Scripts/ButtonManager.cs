@@ -30,4 +30,8 @@ public class ButtonManager : MonoBehaviour
     public void ButtonAudio(){
         FindObjectOfType<AudioManager>().Play("ClickAudio");
     }
+
+    public void LeaderBoardLoad(){
+        SceneManager.LoadScene("LeaderBoard");
+    }
 }
