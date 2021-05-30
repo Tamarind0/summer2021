@@ -33,4 +33,8 @@ public class PauseMenu : MonoBehaviour
          Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1f;
     }
+
+    public void ReturnToMain(){
+        Time.timeScale = 1f;
+    }
 }
