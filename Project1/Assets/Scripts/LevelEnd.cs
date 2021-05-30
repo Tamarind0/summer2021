@@ -4,13 +4,10 @@ using UnityEngine;
 using TMPro;
 public class LevelEnd : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textBox;
-
-    [SerializeField] private TMP_InputField inputField;
-
-    private ScoreCounter _score;
-
+    [SerializeField] private TextMeshProUGUI scoreTextBox;
+    [SerializeField]private TextMeshProUGUI highScoreBox;
     [SerializeField] private Rigidbody2D rb;
+    private ScoreCounter _score;
 
     private TextMeshProUGUI otherCanvas;
 
@@ -22,17 +19,15 @@ public class LevelEnd : MonoBehaviour
 
     // Start is called before the first frame update
    public void Spawn(){
-      gameObject.SetActive(true); // appearing the canvas
+       gameObject.SetActive(true); // appearing the canvas
        Cursor.lockState = CursorLockMode.None;
        rb.constraints = RigidbodyConstraints2D.FreezeAll;
-       textBox.text = _score.heightScore.ToString();
-       inputField.characterLimit = 4;
+       if(_score.heightScore > PlayerPrefs.GetInt("HighScore")){
+       PlayerPrefs.SetInt("HighScore", _score.heightScore);
+        }
+       highScoreBox.text = "HighScore "+ PlayerPrefs.GetInt("HighScore");
+       scoreTextBox.text = _score.heightScore.ToString();
+
   
    }
-
-    public void PlayerNameInput(){
-        _score.playerName = inputField.text;
-        inputField.readOnly = true;
-        
-    }
 }

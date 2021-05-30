@@ -6,7 +6,7 @@ public class ScoreCounter : MonoBehaviour
 {
     //singelton of the Players score
     public int heightScore;
-    public string playerName;
+
     private static ScoreCounter _score;
     public static ScoreCounter score
     {
@@ -25,13 +25,13 @@ public class ScoreCounter : MonoBehaviour
         if(_score != null)
         {
             Destroy(this);
-            Debug.Log("Destroyed");
+            
         }
         else
         {
             _score = this;
             DontDestroyOnLoad(this);
-            Debug.Log("Not destroyed");
+           
         }
     }
 
