@@ -30,12 +30,4 @@ public class LevelEnd : MonoBehaviour
 
   
    }
-
-
-    public void SavePlayerInfo(){
-        
-        PlayerPrefs.DeleteAll();
-
- 
-    }
 }

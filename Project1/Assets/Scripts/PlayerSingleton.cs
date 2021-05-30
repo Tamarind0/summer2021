@@ -21,6 +21,7 @@ public class PlayerSingleton : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+        PlayerPrefs.DeleteAll();
 
     }
 
