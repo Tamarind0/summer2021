@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 //This is for the change outfit screen to keep track of the current skin and apply the skin that is clicked on
 public class SelectSkin : MonoBehaviour
 {
+    //button functions similar to button manager where we make functions for buttons
     private PlayerSingleton player;
 
     [SerializeField]

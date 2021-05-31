@@ -5,6 +5,7 @@ using TMPro;
 public class PlayerDied : MonoBehaviour
 {
 
+
     [SerializeField] private GameObject _player;
     [SerializeField] private float lowerBoundValue;
     private float maxHeight = 0f;
@@ -12,26 +13,25 @@ public class PlayerDied : MonoBehaviour
     public LevelEnd LevelEnd; // calling on the LevelEnd script
     public TextMeshProUGUI otherCanvas;
 
-    private bool myBool = true;
+    private bool deathSoundBool = true;
  
 
     // Update is called once per frame
     void Update()
     {
-        if(_player.transform.position.y > maxHeight){
-            maxHeight = _player.transform.position.y;
+        if(_player.transform.position.y > maxHeight){ //checking if player is moving away from our lowerbound, if it is we update the lowerbound to the player but we still keep the distance so player is not reset immediately
+            maxHeight = _player.transform.position.y; // lowerbound is close to the camera lower edge
             transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y - lowerBoundValue, _player.transform.position.z);
         }
-        if(_player.transform.position.y < transform.position.y){
-            if (myBool)
+        if(_player.transform.position.y < transform.position.y){ //player fell too far and died
+            if (deathSoundBool) //so the death sound does not replay over and over
             {
-              
                  FindObjectOfType<AudioManager>().Play("Death");
-                myBool = false;
+                deathSoundBool = false;
             }
 
             Vanish();
-            LevelEnd.Start();
+            LevelEnd.Start(); //death sequence, look at level end script
             LevelEnd.Spawn();
             
 
@@ -39,7 +39,7 @@ public class PlayerDied : MonoBehaviour
         
     }
 
-    private void Vanish(){
+    private void Vanish(){      //clears score canvas
         otherCanvas.text = " ";
     }
 }

@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 16b07335d5367894bb87e0bfba76628f
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 5503edd9b86c4024bb00cd0a4d682b77
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Change Outfit.unity
     guid: 0d7f4c7805e8ae0428db13b68d9727ad
-  - enabled: 1
-    path: Assets/Scenes/LeaderBoard.unity
-    guid: 7c0991cf412194c4bb4f09965d91fbf6
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
