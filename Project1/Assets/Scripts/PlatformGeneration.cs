@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlatformGeneration : MonoBehaviour
 {
+    //attached to platform generator empty gameObject
     [SerializeField]private GameObject Platform; // platform prefab
 
     [SerializeField]private Transform TopPoint; // the gameobject that is above the camera that will initailize the spawning of the platforms
@@ -14,14 +15,14 @@ public class PlatformGeneration : MonoBehaviour
     [SerializeField] private float numofPlatforms;
     [SerializeField] GameObject specialPlatform;  //pink platforms that launch higher
     private float platformHeight; // box colliders height
-   // private float platformWitdh;
+   
     private GameObject newPlatform;
 
     private GameObject player;
-//brackeys spawner no bueno
+
   void Start(){
     platformHeight = Platform.GetComponent<BoxCollider2D>().size.y; // we need a box collider to get how tall the platform is so they don't overlap.
-  //  platformWitdh = Platform.GetComponent<BoxCollider2D>().size.x;
+  
     player = GameObject.FindGameObjectWithTag("Player");
   }
     // Update is called once per frame

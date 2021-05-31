@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 public class ScoreDisplay : MonoBehaviour
 {
+    //attached to a manager/canvas that updates a textbox 
     //used to display to the score on the Main scene
     [SerializeField] private TextMeshProUGUI textBox;
     [SerializeField] private GameObject player;
@@ -16,7 +17,7 @@ public class ScoreDisplay : MonoBehaviour
         }
     }
 
-    void Update()
+    void Update()       
     {
         if (_score.heightScore <= player.transform.position.y)      //if player falls below highest score we so not update the display score
         {

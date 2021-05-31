@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
+    //atached to platform prefabs
     [SerializeField]
     float jumpForce;
-    private Animator playerAnimator;
-
-    private void Awake()
-    {
-        playerAnimator = GameObject.Find("Player").GetComponent<Animator>();
-    }
 
     private void OnCollisionEnter2D(Collision2D collision){
      if(collision.relativeVelocity.y <= 0f){ //used to determine that the player is landing on the platform
@@ -19,8 +14,8 @@ public class PlatformController : MonoBehaviour
                                             // it is falling
         if(collision.rigidbody != null){    //!= null means when the rigidbody hits the platform, so when it doesn't hit the plaform nothing happens
             if(this.tag == "SuperJump")
-                {
-                    playerAnimator.Play("playerFlip");
+                {//finds player animator component to play the flip
+                    GameObject.Find("Player").GetComponent<Animator>().Play("playerFlip");
                     
                     FindObjectOfType<AudioManager>().Play("SuperJump");
 
