@@ -20,15 +20,18 @@ public class PlatformController : MonoBehaviour
         if(collision.rigidbody != null){    //!= null means when the rigidbody hits the platform, so when it doesn't hit the plaform nothing happens
             if(this.tag == "SuperJump")
                 {
-                    //playerAnimator.Play("playerFlip");
+                    playerAnimator.Play("playerFlip");
                     
                     FindObjectOfType<AudioManager>().Play("SuperJump");
+
+                    
                 }
                 if (this.tag == "NormalPlatform")
                 {
                     FindObjectOfType<AudioManager>().Play("Jump");
                 }
-            collision.rigidbody.velocity = transform.up * jumpForce;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+                collision.rigidbody.velocity = transform.up * jumpForce;
         }
      }
     }
