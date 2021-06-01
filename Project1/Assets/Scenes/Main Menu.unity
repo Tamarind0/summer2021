@@ -1718,9 +1718,9 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: ClickAudio
-    clip: {fileID: 8300000, guid: 55e97846b66e4414db74301f2253a71a, type: 3}
-    volume: 0.7
-    pitch: 0.5
+    clip: {fileID: 8300000, guid: 3e532fd8e0164a745a1917168a7378f9, type: 3}
+    volume: 1
+    pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: Theme
